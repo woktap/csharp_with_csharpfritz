@@ -5,7 +5,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddSignalR();
 builder.Services.AddTransient<MyCollectionSite.Models.CollectionRepository>();
 builder.Services.AddDbContext<MyCollectionSite.Models.CollectionContext>(
     options => options.UseSqlite("Data Source=MyCollectionSite.db")
@@ -51,10 +50,8 @@ app.Use(async (context, next) =>
 
 app.UseAuthorization();
 
-app.MapHub<MyCollectionSite.VotingHub>("/voting");
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-
 
 app.Run();

@@ -36,9 +36,6 @@ namespace MyCollectionSite.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("Votes")
-                        .HasColumnType("INTEGER");
-
                     b.HasKey("Id");
 
                     b.ToTable("CollectionItems");
@@ -50,8 +47,7 @@ namespace MyCollectionSite.Migrations
                             Acquired = new DateTime(2018, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Black hat with the classic Atari logo and Japanese text for Atari under the brim",
                             ImageURL = "https://hatcollection.blob.core.windows.net/hat-images/atari.jpg",
-                            Name = "Atari",
-                            Votes = 0
+                            Name = "Atari"
                         },
                         new
                         {
@@ -59,8 +55,7 @@ namespace MyCollectionSite.Migrations
                             Acquired = new DateTime(2019, 4, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "White hat with purple Blazor logo",
                             ImageURL = "https://hatcollection.blob.core.windows.net/hat-images/blazor.jpg",
-                            Name = "Blazor",
-                            Votes = 0
+                            Name = "Blazor"
                         });
                 });
 #pragma warning restore 612, 618
